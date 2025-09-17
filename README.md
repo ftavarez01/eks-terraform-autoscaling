@@ -13,3 +13,11 @@ Key Features
 *  Cost Optimization: Utilizes AWS Spot Instances to reduce compute costs.
 
 * High Availability: Deploys resources across multiple availability zones.
+
+## Prerequisites
+
+* Terraform: The tool for deploying the infrastructure.
+
+* AWS CLI: The AWS command-line interface to interact with your account.
+
+* kubectl: The tool to interact with the Kubernetes cluster once it's deployed.
