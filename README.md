@@ -1,5 +1,5 @@
-# eks-terraform-autoscaling
-
+Eks Terraform AutoScaling Group
+  
 Project Description
 This project deploys a scalable and highly available Kubernetes cluster on Amazon Web Services (AWS) using Terraform. It leverages Amazon EKS as the control plane and configures two distinct node groups: one for standard, on-demand workloads and another using cost-effective Spot Instances. The infrastructure is designed to automatically adjust its size based on workload demand using the Kubernetes Cluster Autoscaler, ensuring optimal performance and cost efficiency.
 
