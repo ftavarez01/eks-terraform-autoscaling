@@ -1,4 +1,4 @@
-# **Proyect: eks-terraform-autoscaling-group**
+# **Project: eks-terraform-autoscaling-group**
   
 Project Description:
 
