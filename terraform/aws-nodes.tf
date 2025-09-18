@@ -5,8 +5,8 @@ resource "aws_iam_role" "nodes" {
 
   assume_role_policy = jsonencode({
     Statement = [{
-      Action    = "sts:AssumeRole"
-      Effect    = "Allow"
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
       Principal = {
         Service = [
           "ec2.amazonaws.com",
@@ -61,7 +61,7 @@ resource "aws_eks_node_group" "private-nodes" {
   }
 
   labels = {
-    type = "on-demand" 
+    type = "on-demand"
   }
 
   depends_on = [

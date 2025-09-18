@@ -36,7 +36,7 @@ resource "aws_subnet" "public-us-east-2a" {
 
   tags = {
     Name                         = "public-us-east-2a"
-    "kubernetes.io/role/elb"     = "1" 
+    "kubernetes.io/role/elb"     = "1"
     "kubernetes.io/cluster/demo" = "owned"
   }
 }
@@ -50,7 +50,7 @@ resource "aws_subnet" "public-us-east-2b" {
 
   tags = {
     Name                         = "public-us-east-2b"
-    "kubernetes.io/role/elb"     = "1" 
+    "kubernetes.io/role/elb"     = "1"
     "kubernetes.io/cluster/demo" = "owned"
   }
 }
