@@ -21,3 +21,27 @@ Key Features
 * AWS CLI: The AWS command-line interface to interact with your account.
 
 * kubectl: The tool to interact with the Kubernetes cluster once it's deployed.
+
+Project Structure: 
+
+.
+├── .github/
+│   └── workflows/
+│       └── main.yml
+├── kubernetes/
+│   ├── deployment-cluster-autoscaler.yaml
+│   ├── rbac-cluster-autoscaler.yaml
+│   ├── hpa-stress-test.yaml
+│   ├── deployment-main-app.yaml
+│   ├── service-account-cluster-autoscaler.yaml
+│   └── ...
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── provider.tf
+│   ├── outputs.tf
+│   ├── network.tf
+│   ├── eks.tf
+│   ├── iam.tf
+│   └── ...
+└── README.md
