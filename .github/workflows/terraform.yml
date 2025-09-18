@@ -49,10 +49,27 @@ jobs:
       id: init
       run: terraform init
 
+
     # This step will run on every pull request
     - name: 'Terraform Plan on Pull Request'
       if: github.event_name == 'pull_request'
       run: terraform plan -out "tfplan"
+
+    # Upload the plan file as an artifact
+    - name: Upload Terraform Plan
+      if: github.event_name == 'pull_request'
+      uses: actions/upload-artifact@v2
+      with:
+        name: tfplan
+        path: ./terraform/tfplan
+
+    # Push to main, Download the plan and apply it.
+    - name: Download Terraform Plan
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/download-artifact@v2
+      with:
+        name: tfplan
+        path: ./terraform    
 
     # This step will run on the main Branch
     - name: 'Terraform Apply on Push to Main'
