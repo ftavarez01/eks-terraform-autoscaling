@@ -63,7 +63,4 @@ Key Features
 │   │   ├── 📄 aws-provider.tf
 │   │   └── 📄 aws-variables.tf
 │   │
-│   └── ... (otros .tf)
-│
-└── 📘 README.md
-
+│   └── ... (anothers .tf)
