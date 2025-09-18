@@ -1,13 +1,13 @@
-# Terraform file ignored
-terraform/.terraform/
+# Terraform files
+.terraform/
 .terraform.lock.hcl
-terraform/*.tfstate
-terraform/*.tfstate.*
-terraform/*.tfvars
-terraform/.tflint.hcl
-terraform/*.tfrun
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.tflint.hcl
+*.tfrun
 
-# Logs and directorird
+# Logs and directories
 .idea/
 .vscode/
 .DS_Store
