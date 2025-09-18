@@ -34,7 +34,7 @@ Project Structure:
 │   ├── hpa-stress-test.yaml
 │   ├── deployment-main-app.yaml
 │   ├── service-account-cluster-autoscaler.yaml
-│   └── ...
+│   └── ... (y otros archivos de manifiestos)
 ├── terraform/
 │   ├── main.tf
 │   ├── variables.tf
@@ -43,5 +43,5 @@ Project Structure:
 │   ├── network.tf
 │   ├── eks.tf
 │   ├── iam.tf
-│   └── ...
+│   └── ... (y otros archivos .tf)
 └── README.md
