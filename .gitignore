@@ -1,11 +1,11 @@
 # Terraform file ignored
-.terraform/
+terraform/.terraform/
 .terraform.lock.hcl
-*.tfstate
-*.tfstate.*
-*.tfvars
-.tflint.hcl
-*.tfrun
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+terraform/.tflint.hcl
+terraform/*.tfrun
 
 # Logs and directorird
 .idea/
