@@ -36,7 +36,7 @@ Key Features
 │   ├── 📄 hpa-stress-test.yaml
 │   ├── 📄 deployment-main-app.yaml
 │   ├── 📄 service-account-cluster-autoscaler.yaml
-│   └── ... (otros manifiestos)
+│   └── ... (anothers kubernetes manifest file)
 │
 ├── 🌍 terraform/
 │   ├── ☸️ EKS
