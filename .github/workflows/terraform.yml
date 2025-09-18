@@ -63,13 +63,13 @@ jobs:
         name: tfplan
         path: ./terraform/tfplan
 
-    # Push to main, Download the plan and apply it.
-    - name: Download Terraform Plan
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      uses: actions/download-artifact@v4
-      with:
-        name: tfplan
-        path: ./terraform    
+    # Push to main, Download the plan and apply it. (OLD configuration )
+    #- name: Download Terraform Plan
+    #  if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    #  uses: actions/download-artifact@v4
+    #  with:
+    #    name: tfplan
+    #    path: ./terraform    
 
     # This step will run on the main Branch
     # On push to "main", build or change infrastructure according to Terraform configuration files
@@ -78,7 +78,9 @@ jobs:
     #for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: 'Terraform Apply on Push to Main'
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve "tfplan"
+      run: |
+        terraform plan -out "tfplan"
+        terraform apply -auto-approve "tfplan"
 
     #OLD Configuration
     # Generates an execution plan for Terraform
