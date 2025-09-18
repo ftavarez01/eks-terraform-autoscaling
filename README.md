@@ -24,25 +24,28 @@ Key Features
 
 Project Structure: 
 
+## Project Structure
+
+```bash
 .
-├── .github/
-│   └── workflows/
-│       └── main.yml
-├── kubernetes/
-│   ├── deployment-cluster-autoscaler.yaml
-│   ├── rbac-cluster-autoscaler.yaml
-│   ├── hpa-stress-test.yaml
-│   ├── deployment-main-app.yaml
-│   ├── service-account-cluster-autoscaler.yaml
+├── 📂 .github/
+│   └── 📂 workflows/
+│       └── ⚙️ main.yml
+├── ☸️ kubernetes/
+│   ├── 📄 deployment-cluster-autoscaler.yaml
+│   ├── 📄 rbac-cluster-autoscaler.yaml
+│   ├── 📄 hpa-stress-test.yaml
+│   ├── 📄 deployment-main-app.yaml
+│   ├── 📄 service-account-cluster-autoscaler.yaml
 │   └── ... (otros manifiestos)
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── provider.tf
-│   ├── outputs.tf
-│   ├── network.tf
-│   ├── eks.tf
-│   ├── iam.tf
+├── 🌍 terraform/
+│   ├── 📄 main.tf
+│   ├── 📄 variables.tf
+│   ├── 📄 provider.tf
+│   ├── 📄 outputs.tf
+│   ├── 📄 network.tf
+│   ├── 📄 eks.tf
+│   ├── 📄 iam.tf
 │   └── ... (otros .tf)
-└── README.md
+└── 📘 README.md
 
