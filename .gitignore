@@ -1,0 +1,14 @@
+# Terraform file ignored
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+.tflint.hcl
+*.tfrun
+
+# Logs and directorird
+.idea/
+.vscode/
+.DS_Store
+*.log
