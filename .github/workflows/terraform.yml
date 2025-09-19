@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   terraform-deploy-infrastructure:
-    name: 'Terraform'
+    name: ' terraform-deploy-infrastructure'
     runs-on: ubuntu-latest
     environment: production
     #if= github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -93,7 +93,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws eks update-kubeconfig --name ${{ EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }}
+        aws eks update-kubeconfig --name demo --region ${{ secrets.AWS_REGION }}
 
     - name: Deploy Kubernetes Manifests
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
