@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-test
+  labels:
+    type: spot
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      type: spot
+  template:
+    metadata:
+      labels:
+        type: spot
+    spec:
+      containers:
+      - name: stress
+        image: progrium/stress
+        resources:
+          requests:
+            cpu: "550m"
+            memory: "256Mi"
+    #  nodeSelector:
+    #    type: spot
