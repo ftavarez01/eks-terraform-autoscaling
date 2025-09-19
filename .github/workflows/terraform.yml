@@ -9,8 +9,8 @@ on:
 permissions:
   contents: read
 env:
-  AWS_REGION: us-east-2
-  EKS_CLUSTER_NAME: demo
+ # AWS_REGION: us-east-2
+ # EKS_CLUSTER_NAME: demo
 
 
 jobs:
