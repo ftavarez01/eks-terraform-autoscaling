@@ -88,6 +88,7 @@ jobs:
     # Installing kubectl CLI
     - name: 'Deploy manifest configuring autoscaler group'
       uses: 'safe2008/eks-actions@v0.0.4'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       env:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -95,7 +96,5 @@ jobs:
         cluster_name: $EKS_CLUSTER_NAME
       with:
         args: |
-          kubectl set image deployment $K8S_DEPLOYMENT -n $K8S_NAMESPACE
-          $K8S_DEPLOYMENT=$DOCKER_IMAGE:$DOCKER_TAG &&
-          kubectl rollout status deployment/$K8S_DEPLOYMENT -n $K8S_NAMESPACE
+          kubectl apply -f ./manifests
 
