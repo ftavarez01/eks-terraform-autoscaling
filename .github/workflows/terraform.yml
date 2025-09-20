@@ -8,14 +8,14 @@ on:
 
 permissions:
   contents: read
-env:
-  AWS_REGION: us-east-2
-  EKS_CLUSTER_NAME: demo
+#env:
+ # AWS_REGION: us-east-2
+ # EKS_CLUSTER_NAME: demo
 
 
 jobs:
   terraform-deploy-infrastructure:
-    name: 'Terraform'
+    name: ' terraform-deploy-infrastructure'
     runs-on: ubuntu-latest
     environment: production
     #if= github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -50,7 +50,11 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       id: init
-      run: terraform init
+      run: | 
+        terraform init \
+          -backend-config="bucket=my-terraform-tfplan" \
+          -backend-config="key=my-terraform-tfplan/terraform.tfstate" \
+          -backend-config="region=us-east-2"
 
 
     # This step will run on every pull request
@@ -84,16 +88,3 @@ jobs:
       run: |
         terraform plan -out "tfplan"
         terraform apply -auto-approve "tfplan"
-
-    # Installing kubectl CLI
-    - name: 'Deploy manifest configuring autoscaler group'
-      uses: 'safe2008/eks-actions@v0.0.4'
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      env:
-        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws_region: $AWS_REGION
-        cluster_name: $EKS_CLUSTER_NAME
-      with:
-        args: |
-          kubectl apply -f ../manifests/
