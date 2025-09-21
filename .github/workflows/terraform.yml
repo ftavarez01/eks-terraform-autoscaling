@@ -53,7 +53,7 @@ jobs:
       run: | 
         terraform init \
           -backend-config="bucket=my-terraform-tfplan" \
-          -backend-config="key=my-terraform-tfplan/terraform.tfstate" \
+          -backend-config="key=terraform.tfstate" \
           -backend-config="region=us-east-2"
 
 
