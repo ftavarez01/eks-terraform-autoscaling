@@ -1,5 +1,5 @@
 
-# Providers AWS and necesary verson and regions.
+# Providers AWS and necesary verson and regions.#
 terraform {
   required_providers {
     aws = {
