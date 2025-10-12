@@ -30,7 +30,6 @@ resource "aws_iam_policy" "aws_load_balancer_controller" {
           "ec2:CreateSecurityGroup",
           "ec2:AuthorizeSecurityGroupIngress",
           "ec2:RevokeSecurityGroupIngress",
-          "ec2:CreateSecurityGroup",
           "ec2:DeleteSecurityGroup",
           "ec2:DescribeSecurityGroups",
           "ec2:DescribeNetworkInterfaces",
